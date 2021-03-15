@@ -848,7 +848,7 @@ data <- jsonlite::read_json(file, ...)
 
 class: middle, center
 
-<h1><a href="https://raw.githubusercontent.com/therbootcamp/EDA_2020Sep/master/TheRBootcamp.zip" download>Projekt</a></h1>
+<h1><a href="https://www.dropbox.com/s/cfp1iibrl5nsmi3/TheRBootcamp.zip?dl=1" download>Projekt</a></h1>
 
 ---
 
