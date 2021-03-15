@@ -13,6 +13,7 @@
 
 <title>Wettbewerb: Explorative Datenanalyse</title>
 
+<script src="PlottingIII_practical_files/header-attrs-2.6/header-attrs.js"></script>
 <script src="PlottingIII_practical_files/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="PlottingIII_practical_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -22,6 +23,15 @@
 <script src="PlottingIII_practical_files/navigation-1.1/tabsets.js"></script>
 <link href="PlottingIII_practical_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="PlottingIII_practical_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -67,6 +77,7 @@ h6 {
   text-align: left;
 }
 </style>
+
 
 <link rel="stylesheet" href="practical.css" type="text/css" />
 
@@ -183,7 +194,7 @@ summary {
 <col width='10%'>
 <tr style="border:none">
 <td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
-<font style='font-style:normal'>Explorative Datenanalyse</font> <br> <a href='https://therbootcamp.github.io/EDA_2020Sep/'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>  
+<font style='font-style:normal'>Explorative Datenanalyse</font> <br> <a href='https://therbootcamp.github.io/EDA_2021Mar/'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>  
 </td>
 <td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
 <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
@@ -198,7 +209,7 @@ summary {
 <img width="100%" src="image/baseltour3.jpg" margin=0><br> <font style="font-size:10px">from <a href="https://www.uber.com/en-CH/blog/zurich/basler-fasnacht-2019/">uber.com</a></font>
 </p>
 <div id="section" class="section level1 tabset">
-<h1></h1>
+<h1 class="tabset"></h1>
 <div id="überblick" class="section level2">
 <h2>Überblick</h2>
 <p>Beweist eure Datawrangling- und visualisierungsskills in einem Wettbewerb zur Explorativen Datenanalyse. Grabt tief in einen Datensatz um die beste, entscheidungsrelevanteste Graphik zu erstellen und damit 🍫🍫🍫 zu gewinnnen.</p>
@@ -209,7 +220,7 @@ summary {
 <p></font></p>
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Sep 5, 2020 17:20:00").getTime();
+var countDownDate = new Date("Mar 20, 2021 17:20:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -424,7 +435,7 @@ ggsave(filename = &#39;plot_DOZENTEN.png&#39;,
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
