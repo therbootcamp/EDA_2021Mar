@@ -212,7 +212,7 @@ summary {
 <h1 class="tabset"></h1>
 <div id="überblick" class="section level2">
 <h2>Überblick</h2>
-<p>In diesem Practical wirst du üben mit <code>ggplot2</code> schöne Grafiken zu erstellen.</p>
+<p>In diesem Practical wirst du üben mit <code>ggplot2</code> Grafiken zu erstellen.</p>
 <p>Am Ende des Practicals wirst du wissen wie man:</p>
 <ol style="list-style-type: decimal">
 <li>Einen Plot Schritt-für-Schritt aufbaut.</li>
@@ -249,30 +249,35 @@ summary {
 <p>In diesem Abschnitt wirst du den folgenden Plot Schritt-für-Schritt zusammenbauen.</p>
 <p><img src="Plotting_practical_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ol style="list-style-type: decimal">
-<li>Verwende <code>ggplot()</code> um einen leeren Plot zu starten. Positioniere <code>Calories</code> auf der x-Achse und <code>SaturatedFat</code> auf der y-Achse.</li>
+<li>Verwende <code>ggplot()</code> um einen leeren Plot für den <code>mcdonalds</code> Datensatz zu starten.</li>
+</ol>
+<pre class="r"><code>ggplot(data = mcdonalds)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Verwende nun das <code>mapping</code>-Argument und die <code>aes()</code>-Helferfunltion um <code>Calories</code> der x-Achse und <code>SaturatedFat</code> der y-Achse zuzuweisen.</li>
 </ol>
 <pre class="r"><code>ggplot(data = mcdonalds, 
        mapping = aes(x = XX, y = XX))</code></pre>
-<ol start="2" style="list-style-type: decimal">
+<ol start="3" style="list-style-type: decimal">
 <li><p>Ergänze <code>geom_point()</code> mit <code>+</code> um Punkte zu plotten.</p></li>
 <li><p>Verwende das <code>col</code> Argument in <code>aes()</code> um die Farbe nach der Variable <code>Category</code> variieren zu lassen.</p></li>
 </ol>
 <pre class="r"><code>ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
   geom_point() </code></pre>
-<ol start="4" style="list-style-type: decimal">
-<li>Ergänze <code>+ geom_smooth()</code> um eine angepasste Linie zu ergänzen.</li>
+<ol start="5" style="list-style-type: decimal">
+<li>Ergänze <code>+ geom_smooth()</code> um eine gefittete Linie zu ergänzen.</li>
 </ol>
 <pre class="r"><code>ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
   geom_point() + 
   geom_smooth()</code></pre>
-<ol start="5" style="list-style-type: decimal">
-<li>Oops! Hast du mehre Linien anstatt einer bekommen? Löse das Problem indem du die Farbe innerhalb von <code>geom_smooth()</code> auf <code>black</code> setzt.</li>
+<ol start="6" style="list-style-type: decimal">
+<li>Oops! Hast du mehre Linien anstatt einer bekommen? Löse das Problem indem du die Farbe innerhalb von <code>geom_smooth()</code> auf <code>"black"</code> setzt.</li>
 </ol>
 <pre class="r"><code>ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
   geom_point() +
   geom_smooth(col = &quot;XX&quot;) </code></pre>
-<ol start="6" style="list-style-type: decimal">
-<li>Verwende <code>labs()</code> um den Plot angemessen zu annotieren.</li>
+<ol start="7" style="list-style-type: decimal">
+<li><p>R versteht eine grosse Menge von Farbworten. Lasse dir diese mit <code>colors()</code> (ohne Argumente) anzeigen. Alle aufgeführten <code>character</code> Werte können verwenden werden um die entsprechende Farbe zu definieren.</p></li>
+<li><p>Verwende nun <code>labs()</code> um den Plot angemessen zu annotieren.</p></li>
 </ol>
 <pre class="r"><code>ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
   geom_point() +
@@ -280,8 +285,8 @@ summary {
   labs(title = &quot;XX&quot;,
        subtitle = &quot;XX&quot;,
        caption = &quot;XX&quot;)</code></pre>
-<ol start="7" style="list-style-type: decimal">
-<li>Verwende <code>xlim()</code>, eine einfache Version von <code>scale_x_continuous()</code>, um die x-Achse auf die Werte <code>0</code> und <code>1250</code> zu begrenzen.</li>
+<ol start="9" style="list-style-type: decimal">
+<li>Verwende <code>xlim()</code>, eine einfache Version von <code>scale_x_continuous()</code> (mehr dazu später), um die x-Achse auf die Werte <code>0</code> und <code>1250</code> zu begrenzen.</li>
 </ol>
 <pre class="r"><code>ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
   geom_point() +
@@ -290,8 +295,8 @@ summary {
        subtitle = &quot;XX&quot;,
        caption = &quot;XX&quot;) +
   xlim(XX, XX)</code></pre>
-<ol start="8" style="list-style-type: decimal">
-<li>Abschliessend verwende <code>theme_minimal()</code> um die Ästhetik des Plots anzupassen.</li>
+<ol start="10" style="list-style-type: decimal">
+<li>Abschliessend verwende <code>theme_minimal()</code> um die Ästhetik des Plots anzupassen. Auch hierzu mehr später.</li>
 </ol>
 </div>
 <div id="d---geoms" class="section level3">
@@ -330,7 +335,7 @@ summary {
 <div id="e---geom_text" class="section level3">
 <h3>E - <code>geom_text</code></h3>
 <p>In dieser Sektion wirst du den folgenden Plot unter Verwendung von <code>geom_text()</code> kreieren.</p>
-<p><img src="Plotting_practical_files/figure-html/unnamed-chunk-25-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="Plotting_practical_files/figure-html/unnamed-chunk-27-1.png" width="768" style="display: block; margin: auto;" /></p>
 <ol style="list-style-type: decimal">
 <li>Beginne damit folgendes Code-Template entsprechend auszufüllen.</li>
 </ol>
@@ -364,7 +369,7 @@ summary {
                fun.y = &quot;mean&quot;) +
   labs(title = &quot;XX&quot;,
        subtitle = &quot;XX&quot;)</code></pre>
-<p><img src="Plotting_practical_files/figure-html/unnamed-chunk-29-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p><img src="Plotting_practical_files/figure-html/unnamed-chunk-31-1.png" width="960" style="display: block; margin: auto;" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Probiere ein paar Sachen aus:</li>
 </ol>

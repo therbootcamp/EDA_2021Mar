@@ -575,7 +575,8 @@ class: middle, center
 
 ]
 
----
+
+<!---
 
 # DO: Barplot
 
@@ -599,7 +600,7 @@ class: middle, center
 ]
 
 
----
+
 
 # DO: Barplot
 
@@ -622,7 +623,7 @@ class: middle, center
 
 ]
 
----
+
 
 
 # DO: Barplot
@@ -648,7 +649,7 @@ class: middle, center
 ]
 
 
----
+
 
 # DO: Horizontaler Barplot
 
@@ -670,7 +671,7 @@ class: middle, center
 
 ]
 
----
+
 
 # DO: Horizontaler Barplot
 
@@ -693,7 +694,7 @@ class: middle, center
 ]
 
 
----
+
 
 # DO: Linienplot
 
@@ -715,7 +716,7 @@ class: middle, center
 
 ]
 
----
+
 
 # DO: Linienplot
 
@@ -737,7 +738,7 @@ class: middle, center
 
 ]
 
----
+
 
 # DO: Slopeplot
 
@@ -759,7 +760,7 @@ class: middle, center
 
 ]
 
----
+
 
 # DO: Slopeplot
 
@@ -781,7 +782,7 @@ class: middle, center
 
 ]
 
----
+
 
 # DO: Scatterplot
 
@@ -804,7 +805,7 @@ class: middle, center
 
 
 
----
+
 
 # DO: Scatterplot
 
@@ -825,6 +826,8 @@ class: middle, center
 
 ]
 
+
+--->
 
 ---
 

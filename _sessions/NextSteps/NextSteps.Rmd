@@ -277,7 +277,7 @@ Das Netz ist vll. der beste Ort für Informationen über R.
       <font style="font-size:20px;weight:700"><br>Einführung in die moderne Datenanalyse mit R</font><br>
       <br>
       <img src="https://therbootcamp.github.io/img/courses/0.png" height="180px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>August 28,<br>2020</high><br><br><br><br>
+      <high>März 31,<br>2020</high><br><br><br><br>
     </p>
   </td>
   <td>
@@ -286,7 +286,7 @@ Das Netz ist vll. der beste Ort für Informationen über R.
       <font style="font-size:20px;weight:700"><br>Explorative Datenanalyse mit R<br></font><br>
       <br>
       <img src="https://therbootcamp.github.io/img/courses/1.png" height="180px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>September 4/5,<br>2020</high><br><br><br><br>
+      <high>März 19/20,<br>2020</high><br><br><br><br>
     </p>
   </td>
   <td>
@@ -295,7 +295,7 @@ Das Netz ist vll. der beste Ort für Informationen über R.
       <font style="font-size:20px;weight:700"><br>Statistik mit R<br><br></font><br>
       <br>
       <img src="https://therbootcamp.github.io/img/courses/2.png" height="180px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>September 25/26,<br>2020</high><br><br><br><br>
+      <high>Statistik 16/17,<br>2020</high><br><br><br><br>
       </a>
     </p>
   </td>
@@ -305,7 +305,7 @@ Das Netz ist vll. der beste Ort für Informationen über R.
       <font style="font-size:20px;weight:700"><br>Maschinelles Lernen mit R<br></font><br>
       <br>
       <img src="https://therbootcamp.github.io/img/courses/3.png" height="180px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>Oktober 23/24,<br>2020</high><br><br><br><br>
+      <high>Mai 14/15,<br>2020</high><br><br><br><br>
       </a>
     </p>
   </td>
@@ -315,7 +315,7 @@ Das Netz ist vll. der beste Ort für Informationen über R.
       <font style="font-size:20px;weight:700"><br>Reporting mit R<br><br></font><br>
       <br>
       <img src="https://therbootcamp.github.io/img/courses/4.png" height="180px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>November 5/6,<br>2020</high><br><br><br><br>
+      <high>Juni 25/26,<br>2020</high><br><br><br><br>
       </a>
     </p>
   </td>
@@ -338,12 +338,13 @@ Das Netz ist vll. der beste Ort für Informationen über R.
 .pull-right45[
 
 <p align="center"><br><br>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScStl75PemZyvU910y84PFSIrqa78PZUQFXltFHgiKUj2kIgQ/viewform?embedded=true" width="430" height="550" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></p>
+<iframe src="ttps://docs.google.com/forms/d/e/1FAIpQLSdwG4wcc-PzgPp1cKNVxZFLB9sHV88tSK-p6xIVBcBObBqaxA/viewform?embedded=true" width="430" height="550" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></p>
+
 
 ]
 
 ---
 class: center, middle
 
-# Herzlichen Dank! und noch eine Sache...
+# Herzlichen Dank!
 

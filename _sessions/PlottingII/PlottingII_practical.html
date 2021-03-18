@@ -271,7 +271,7 @@ summary {
   scale_y_continuous(trans = &#39;pseudo_log&#39;) +
   facet_wrap(~ XX)</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li>Es zeichnet sich ab, dass nicht alle Verbrechen gleich mit dem Anteil Metro-Fahrender zusammenhängen. Der stärkste Zusammenhang scheint zu Autodiebstählen und Raubüberfällen zu bestehen. Kann aber natürlich sein, dass eine dritte Variable diesen Zusammenhang treibt, z.B. der Prozentsatz unter der Armutsgrenze lebender Personen. Verwende <code>facet_grid()</code> um gleichzeitig nach Verbrechen und <code>prozent_armut</code> kleiner oder grösser 10% zu differenzieren. Wie du im Code siehst, kannst du den logischen Vergleich direkt in die Funktion schreiben.</li>
+<li>Es zeichnet sich ab, dass nicht alle Verbrechen gleich mit dem Anteil Metro-Fahrender zusammenhängen. Der stärkste Zusammenhang scheint zu Autodiebstählen und Raubüberfällen zu bestehen. Kann aber natürlich sein, dass eine dritte Variable diesen Zusammenhang verursacht, z.B. der Prozentsatz unter der Armutsgrenze lebender Personen. Verwende <code>facet_grid()</code> um gleichzeitig nach Verbrechen und <code>prozent_armut</code> kleiner oder grösser 10% zu differenzieren. Wie du im Code siehst, kannst du den logischen Vergleich direkt in die Funktion schreiben.</li>
 </ol>
 <pre class="r"><code>ggplot(XX, aes(x = XX, 
                y = XX)) +
@@ -293,7 +293,7 @@ summary {
   scale_y_continuous(trans = &#39;pseudo_log&#39;) +
   facet_grid(XX &gt; 5000 ~ XX)</code></pre>
 <ol start="7" style="list-style-type: decimal">
-<li>Der Zusammenhang ist verschwunden. Wir haben von Beginn an übersehen, dass viele Metro-fahrer stark mit einer hohen Bevölkerungsdichte assoziert ist und diese wiederum mit der Anzahl von Delikten. Wenn du magst, exploriere die Daten ein wenig weiter. Welche Zusammenhänge kannst du noch entdecken?</li>
+<li>Der Zusammenhang ist verschwunden. Die Anzahl der Metro-Fahrer ist stark mit der Bevölkerungsdichte assoziert und diese wiederum mit der Anzahl von Delikten. Wenn du magst, exploriere die Daten ein wenig weiter. Welche Zusammenhänge kannst du noch entdecken?</li>
 </ol>
 </div>
 <div id="d---themes" class="section level3">

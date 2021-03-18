@@ -55,7 +55,7 @@ require(tidyverse)
 
 ## Überblick
 
-In diesem Practical wirst du üben mit `ggplot2` schöne Grafiken zu erstellen. 
+In diesem Practical wirst du üben mit `ggplot2` Grafiken zu erstellen. 
 
 Am Ende des Practicals wirst du wissen wie man:
 
@@ -85,7 +85,7 @@ Am Ende des Practicals wirst du wissen wie man:
 
 1. Verwende die `read_csv()` Funktion um den Datensatz `mcdonalds` als Objekt `mcdonalds` einzulesen. Denke an den Trick mit den Anführungszeichen. 
 
-```{r, echo = F, eval = T, message = F}
+```{r, eval = T, message = F}
 # Lese mcdonalds
 mcdonalds <- read_csv('1_Data/mcdonalds.csv')
 ```
@@ -109,7 +109,17 @@ ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
   theme_minimal()
 ```
 
-1. Verwende `ggplot()` um einen leeren Plot zu starten. Positioniere `Calories` auf der x-Achse und `SaturatedFat` auf der y-Achse. 
+1. Verwende `ggplot()` um einen leeren Plot für den `mcdonalds` Datensatz zu starten.
+
+```{r, echo = TRUE, eval = FALSE, fig.width = 6, fig.height = 4}
+ggplot(data = mcdonalds)
+```
+
+```{r, fig.width = 7, fig.height = 4}
+ggplot(mcdonalds)
+```
+
+2. Verwende nun das `mapping`-Argument und die `aes()`-Helferfunltion um `Calories` der x-Achse und `SaturatedFat` der y-Achse zuzuweisen. 
 
 ```{r, echo = TRUE, eval = FALSE, fig.width = 6, fig.height = 4}
 ggplot(data = mcdonalds, 
@@ -120,14 +130,14 @@ ggplot(data = mcdonalds,
 ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat))
 ```
 
-2. Ergänze `geom_point()` mit `+` um Punkte zu plotten.
+3. Ergänze `geom_point()` mit `+` um Punkte zu plotten.
 
 ```{r, fig.width = 7, fig.height = 4}
 ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat)) +
   geom_point()
 ```
 
-3. Verwende das `col` Argument in `aes()` um die Farbe nach der Variable `Category` variieren zu lassen.
+4. Verwende das `col` Argument in `aes()` um die Farbe nach der Variable `Category` variieren zu lassen.
 
 ```{r, echo = TRUE, eval = FALSE, fig.width = 6, fig.height = 4}
 ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
@@ -139,7 +149,7 @@ ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
   geom_point()
 ```
 
-4. Ergänze `+ geom_smooth()` um eine angepasste Linie zu ergänzen.
+5. Ergänze `+ geom_smooth()` um eine gefittete Linie zu ergänzen.
 
 ```{r, echo = TRUE, eval = FALSE, fig.width = 6, fig.height = 4}
 ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
@@ -153,7 +163,7 @@ ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
   geom_smooth()
 ```
 
-5. Oops! Hast du mehre Linien anstatt einer bekommen? Löse das Problem indem du die Farbe innerhalb von `geom_smooth()` auf `black` setzt. 
+6. Oops! Hast du mehre Linien anstatt einer bekommen? Löse das Problem indem du die Farbe innerhalb von `geom_smooth()` auf `"black"` setzt. 
 
 ```{r, echo = TRUE, eval = FALSE, fig.width = 6, fig.height = 4}
 ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
@@ -167,7 +177,9 @@ ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
   geom_smooth(col = "black")
 ```
 
-6. Verwende `labs()` um den Plot angemessen zu annotieren.
+7. R versteht eine grosse Menge von Farbworten. Lasse dir diese mit `colors()` (ohne Argumente) anzeigen. Alle aufgeführten `character` Werte können verwenden werden um die entsprechende Farbe zu definieren.
+
+8. Verwende nun `labs()` um den Plot angemessen zu annotieren.
 
 ```{r, echo = TRUE, eval = FALSE, fig.width = 8, fig.height = 2}
 ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
@@ -187,7 +199,7 @@ ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
        caption = "Quelle: Kaggle.com")
 ```
 
-7. Verwende `xlim()`, eine einfache Version von `scale_x_continuous()`, um die x-Achse auf die Werte `0` und `1250` zu begrenzen. 
+9. Verwende `xlim()`, eine einfache Version von `scale_x_continuous()` (mehr dazu später), um die x-Achse auf die Werte `0` und `1250` zu begrenzen. 
 
 ```{r, echo = TRUE, eval = FALSE, fig.width = 8, fig.height = 2}
 ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
@@ -209,7 +221,7 @@ ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
   xlim(0, 1250)
 ```
 
-8. Abschliessend verwende `theme_minimal()` um die Ästhetik des Plots anzupassen.  
+10. Abschliessend verwende `theme_minimal()` um die Ästhetik des Plots anzupassen. Auch hierzu mehr später.  
 
 ```{r, fig.width = 7, fig.height = 4}
 ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
@@ -232,7 +244,6 @@ ggplot(data = mcdonalds,
        aes(x = XX, y = XX, fill = XX)) +
   geom_violin()
 ```
-
 
 ```{r, fig.width = 8, fig.height = 3}
 ggplot(data = mcdonalds, 

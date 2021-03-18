@@ -175,7 +175,7 @@ ggplot(verbrechen, aes(x = prozent_metro,
   facet_wrap(~verbrechen)
 ```
 
-5. Es zeichnet sich ab, dass nicht alle Verbrechen gleich mit dem Anteil Metro-Fahrender zusammenhängen. Der stärkste Zusammenhang scheint zu Autodiebstählen und Raubüberfällen zu bestehen. Kann aber natürlich sein, dass eine dritte Variable diesen Zusammenhang treibt, z.B. der Prozentsatz unter der Armutsgrenze lebender Personen. Verwende `facet_grid()` um gleichzeitig nach Verbrechen und `prozent_armut` kleiner oder grösser 10% zu differenzieren. Wie du im Code siehst, kannst du den logischen Vergleich direkt in die Funktion schreiben.   
+5. Es zeichnet sich ab, dass nicht alle Verbrechen gleich mit dem Anteil Metro-Fahrender zusammenhängen. Der stärkste Zusammenhang scheint zu Autodiebstählen und Raubüberfällen zu bestehen. Kann aber natürlich sein, dass eine dritte Variable diesen Zusammenhang verursacht, z.B. der Prozentsatz unter der Armutsgrenze lebender Personen. Verwende `facet_grid()` um gleichzeitig nach Verbrechen und `prozent_armut` kleiner oder grösser 10% zu differenzieren. Wie du im Code siehst, kannst du den logischen Vergleich direkt in die Funktion schreiben.   
 
 ```{r, eval = FALSE, echo = TRUE}
 ggplot(XX, aes(x = XX, 
@@ -225,7 +225,7 @@ ggplot(verbrechen, aes(x = prozent_metro,
   facet_grid(bevoelkerung_dichte > 5000 ~ verbrechen)
 ```
 
-7. Der Zusammenhang ist verschwunden. Wir haben von Beginn an übersehen, dass viele Metro-fahrer stark mit einer hohen Bevölkerungsdichte assoziert ist und diese wiederum mit der Anzahl von Delikten. Wenn du magst, exploriere die Daten ein wenig weiter. Welche Zusammenhänge kannst du noch entdecken?      
+7. Der Zusammenhang ist verschwunden. Die Anzahl der Metro-Fahrer ist stark mit der Bevölkerungsdichte assoziert und diese wiederum mit der Anzahl von Delikten. Wenn du magst, exploriere die Daten ein wenig weiter. Welche Zusammenhänge kannst du noch entdecken?      
 
 ### D - `theme`s
 
