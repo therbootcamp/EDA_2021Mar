@@ -253,7 +253,7 @@ bevoelkerung_long &lt;- bevoelkerung %&gt;%
   pivot_longer(cols = c(&quot;XX&quot;, &quot;XX&quot;), names_to = &quot;XX&quot;)</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li><p>Printe den neu erstellten Datensatz. Alles wie erwartet?</p></li>
-<li><p>Nun bringe nicht nur die Jahre 2001 und 2011, sondern alle im Datensatz vorhandenen Jahre ins Long Format. Schaue dir zunächst nochmals die Namen der Spalten mit <code>names()</code> an.</p></li>
+<li><p>Nun bringe nicht nur die Jahre 2001 und 2011, sondern alle im Datensatz vorhandenen Jahre ins Long-Format. Schaue dir zunächst nochmals die Namen der Spalten mit <code>names()</code> an.</p></li>
 <li><p>Jede Jahr-Variable hat die gleiche Struktur, nämlich <code>st_wbev_XXX</code>. Das bedeutet, dass du die sehr hilfreiche <code>starts_with()</code> Funktion zur Variablenauswahl verwenden kannst. Benutze <code>pivot_longer()</code> und <code>starts_with()</code> um alle Jahr-Variablen zu transformieren.</p></li>
 </ol>
 <pre class="r"><code># Transofmation vom Wide ins Long Format
@@ -268,13 +268,13 @@ bevoelkerung_long &lt;- bevoelkerung %&gt;%
   pivot_longer(cols = starts_with(&quot;XX&quot;), names_to = &quot;XX&quot;, values_to = &quot;XX&quot;)</code></pre>
 <ol start="9" style="list-style-type: decimal">
 <li><p>Schaue dir das Resultat an. Alles in Ordnung?</p></li>
-<li><p>Verwende nun das <code>names_prefix</code> Argument um die Präfixe der Jahreszahlen automatisch zu entfernen. Der <code>character</code>-String der für <code>names_prefix</code> bereit gestellt wird, wird vom Beginn der Variablennamen entfernt.</p></li>
+<li><p>Verwende nun das <code>names_prefix</code> Argument um die Präfixe der Jahreszahlen (<code>"st_wbev_"</code>) automatisch zu entfernen. Der <code>character</code>-String der für <code>names_prefix</code> bereit gestellt wird, wird vom Beginn der Variablennamen entfernt.</p></li>
 </ol>
 </div>
 <div id="c---transformation-von-long-zu-wide-format" class="section level3">
 <h3>C - Transformation von <em>Long</em> zu <em>Wide</em> Format</h3>
 <ol style="list-style-type: decimal">
-<li>Nun nimm an, dass du die Daten als <code>bevoelkerung_long</code> im Long Format bekommen hättest und sie ins Wide Format umwandeln müsstest. Verwende die <code>pivot_wider()</code> Funktion und den Argumenten <code>names_from</code> und <code>values_from</code> die Spalten <code>jahr</code> und <code>einwohner</code> zu. Speichere das Ergebnis als <code>bevoelkerung_wide</code> ab.</li>
+<li>Nun nimm an, dass du die Daten als <code>bevoelkerung_long</code> im Long Format bekommen hättest und sie ins Wide Format umwandeln müsstest. Verwende die <code>pivot_wider()</code> Funktion und weise den Argumenten <code>names_from</code> und <code>values_from</code> die Spalten <code>jahr</code> und <code>einwohner</code> zu. Speichere das Ergebnis als <code>bevoelkerung_wide</code> ab.</li>
 </ol>
 <pre class="r"><code># Transofmation vom Long ins Wide Format
 bevoelkerung_wide &lt;- bevoelkerung_long %&gt;%
@@ -286,7 +286,7 @@ bevoelkerung_wide &lt;- bevoelkerung_long %&gt;%
 </div>
 <div id="d---wiederholung-wrangling-i" class="section level3">
 <h3>D - Wiederholung Wrangling I</h3>
-<p>Für den Rest des Practicals arbeitst du mit dem <code>kc_house.csv</code> Datensatz. Er enthält Verkaufspreise von Häusern in King County, Washington. Aufgelistet sind Häuser, welche zwischen Mai 2014 und Mai 2015 verkauft wurden. Nebst den Verkaufspreisen enthält der Datensatz Spezifikationen der Häuser, z.B. die Anzahl Zimmer eines Hauses.</p>
+<p>Im Rest des Practicals arbeitst du mit dem <code>kc_house.csv</code> Datensatz. Er enthält Verkaufspreise von Häusern in King County, Washington. Aufgelistet sind Häuser, welche zwischen Mai 2014 und Mai 2015 verkauft wurden. Nebst den Verkaufspreisen enthält der Datensatz Spezifikationen der Häuser, z.B. die Anzahl Zimmer eines Hauses.</p>
 <ol style="list-style-type: decimal">
 <li>Lese den Datensatz mit der <code>read_csv()</code> Funktion in R ein und speichere ihn unter dem Namen <code>kc_house</code>.</li>
 </ol>
@@ -301,14 +301,14 @@ bevoelkerung_wide &lt;- bevoelkerung_long %&gt;%
          XX  = XX * 0.093)</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li><p>Kreiere wiederum mit <code>mutate()</code> eine neue Spalte <code>qm_total</code>, welche die Summe aus <code>qm_wohnraum</code>, <code>qm_dachstock</code> und <code>qm_keller</code> darstellt.</p></li>
-<li><p>Füge eine neue Variable <code>villa</code> hinzu (mit <code>mutate()</code>), welche den Wert “ja” annimmt, wenn <code>qm_total</code> grösser als 750 ist und “nein”, wenn <code>qm_total</code> kleiner oder gleich 750 ist.</p></li>
+<li><p>Füge eine neue Variable <code>villa</code> hinzu (mit <code>mutate()</code>), welche den Wert <code>"ja"</code> annimmt, wenn <code>qm_total</code> grösser als 750 ist und “nein”, wenn <code>qm_total</code> kleiner oder gleich 750 ist.</p></li>
 </ol>
 </div>
 <div id="e---summarise" class="section level3">
 <h3>E - <code>summarise</code></h3>
 <ol style="list-style-type: decimal">
-<li><p>Unter Verwendung der base-R <code>data$col</code> Notation, berechne den Mittelwert über alle Hauspreise.</p></li>
-<li><p>Berechne wieder den Mittelwert aber verwende diesmal <code>summarise()</code> Funktion. Besteht ein Unterschied in den Resultaten dieser und der vorherigen Aufgabe?</p></li>
+<li><p>Unter Verwendung der base-R <code>data$col</code> Notation, berechne den Mittelwert über alle Hauspreise mit <code>mean()</code>.</p></li>
+<li><p>Berechne wieder den Mittelwert aber verwende diesmal <code>mean()</code> innerhalb der <code>summarise()</code> Funktion. Besteht ein Unterschied in den Resultaten dieser und der vorherigen Aufgabe?</p></li>
 </ol>
 <pre class="r"><code>kc_house %&gt;%
   summarise(
@@ -328,14 +328,14 @@ bevoelkerung_wide &lt;- bevoelkerung_long %&gt;%
 <div id="f---group_by-und-summarise" class="section level3">
 <h3>F - <code>group_by</code> und <code>summarise</code></h3>
 <ol style="list-style-type: decimal">
-<li>Verwende <code>group_by()</code> und <code>n()</code> um zu berechnen wie viele Villen und wie viele normale Häuser (nicht-Villen) im Datensatz vorhanden sind.</li>
+<li>Verwende <code>group_by()</code>, <code>summarise()</code> und <code>n()</code> um zu berechnen wie viele Villen und wie viele normale Häuser (nicht-Villen) im Datensatz vorhanden sind.</li>
 </ol>
 <pre class="r"><code>kc_house %&gt;%
   group_by(XX) %&gt;%
   summarise(N = XX)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Ergänze nun einen Eintrag in <code>summarise()</code>, der den mittlere Verkaufspreis von Villen und normalen Häusern (nicht-Villen) berechnet?</p></li>
-<li><p>Verwende nun <code>group_by()</code> und <code>summarise()</code>, um auch noch das Maximum zu bestimmen.</p></li>
+<li><p>Berechne nun auch noch das Minimum (<code>min()</code>) und Maximum (<code>min()</code>).</p></li>
 <li><p>Haben Häuser, welche später gebaut wurden, eine grössere Wohnfläche? Gruppiere zur Beantwortung dieser Frage die Daten nach <code>baujahr</code> und berechne dann die mittlere Wohnfläche (<code>qm_wohnraum</code>).</p></li>
 </ol>
 </div>

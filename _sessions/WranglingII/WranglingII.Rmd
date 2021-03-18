@@ -427,7 +427,7 @@ patienten_ergebnisse %>%
 
 ```{r, eval = F}
 # wide zu long
-DATEN %>% 
+TIBBLE %>% 
   pivot_longer(cols = VARS,
                names_to = NAME1,
                values_to = NAME2)
@@ -453,7 +453,7 @@ patienten_ergebnisse %>%
 
 ```{r, eval = F}
 # wide zu long
-DATEN %>% 
+TIBBLE %>% 
   pivot_longer(cols = VARS,
                names_to = NAME1,
                values_to = NAME2)
@@ -483,7 +483,7 @@ patienten_ergebnisse %>%
 
 ```{r, eval = F}
 # wide zu long
-DATEN %>% 
+TIBBLE %>% 
   pivot_wider(names_from = VAR1,
               values_from = VAR2)
 ```
@@ -516,7 +516,7 @@ patienten_ergebnisse_lang
 
 ```{r, eval = F}
 # wide zu long
-DATEN %>% 
+TIBBLE %>% 
   pivot_wider(names_from = VAR1,
               values_from = VAR2)
 ```
@@ -588,7 +588,7 @@ basel
 
 
 ```{r, echo = TRUE, eval = FALSE}
-DATEN %>%
+TIBBLE %>%
   summarise(
     NAME1 = SUMMARY_FUN(VAR1),
     NAME2 = SUMMARY_FUN(VAR2)
@@ -622,7 +622,7 @@ basel %>%
 
 
 ```{r, echo = TRUE, eval = FALSE}
-DATEN %>%
+TIBBLE %>%
   summarise_if(
     BEDINGUNG,
     SUMMARY_FUN
@@ -651,7 +651,7 @@ basel %>%
 
 
 ```{r, echo = TRUE, eval = FALSE}
-DATEN %>%
+TIBBLE %>%
   summarise_if(
     BEDINGUNG,
     SUMMARY_FUN
@@ -682,7 +682,7 @@ basel %>%
 
 
 ```{r, echo = TRUE, eval = FALSE}
-DATEN %>%
+TIBBLE %>%
   summarise_if(
     BEDINGUNG,
     SUMMARY_FUN,
@@ -722,7 +722,7 @@ basel %>%
 .pull-left4[
 
 ```{r, eval = F}
-DATEN %>%
+TIBBLE %>%
   group_by(GRUPPEN_VAR) %>%
   summarise(
     NAME1 = SUMMARY_FUN(VAR1),
@@ -757,7 +757,7 @@ basel %>%
 .pull-left4[
 
 ```{r, eval = F}
-DATEN %>%
+TIBBLE %>%
   group_by(GRUPPEN_VAR) %>%
   summarise(
     NAME1 = SUMMARY_FUN(VAR1),
@@ -796,7 +796,7 @@ basel %>%
 .pull-left4[
 
 ```{r, eval = F}
-DATEN %>%
+TIBBLE %>%
   group_by(GRUPPEN_VAR) %>%
   summarise(
     NAME1 = SUMMARY_FUN(VAR1),
@@ -831,7 +831,7 @@ basel %>%
 .pull-left4[
 
 ```{r, eval = F}
-DATEN %>%
+TIBBLE %>%
   group_by(GRUPPEN_VAR) %>%
   summarise(
     NAME1 = SUMMARY_FUN(VAR1),
@@ -867,7 +867,7 @@ basel %>%
 .pull-left4[
 
 ```{r, eval = F}
-DATEN %>%
+TIBBLE %>%
   group_by(GRUPPEN_VAR) %>%
   summarise(
     NAME1 = SUMMARY_FUN(VAR1),
@@ -904,7 +904,7 @@ basel %>%
 .pull-left4[
 
 ```{r, eval = F}
-DATEN %>%
+TIBBLE %>%
   group_by(GRUPPEN_VAR) %>%
   summarise(
     NAME = SUMMARY_FUN(VAR),

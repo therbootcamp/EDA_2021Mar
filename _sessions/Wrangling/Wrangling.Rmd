@@ -163,23 +163,21 @@ ergebnisse
 
 ---
 
-# Das mächtige <mono>tidyverse</mono>
+# Das <mono>tidyverse</mono>
 
 <ul>
-  <li class="m1"><span>Das <a href="https://www.tidyverse.org/"><mono>tidyverse</mono></a> ist im Kern eine Sammlung hoch-performanter, nutzerfreundlicher Pakete, die speziell für eine effizientere Datenanalyse entwickelt wurden.</span></li>
+  <li class="m1"><span>Das <a href="https://www.tidyverse.org/"><mono>tidyverse</mono></a> ist eine Sammlung hoch-performanter, nutzerfreundlicher Pakete für eine effiziente Datenaufbereitung und -analyse.</span></li>
 </ul>
 
 <ol style="padding-left:72px">
-  <li><mono>ggplot2</mono> für Grafiken.</li>
+  <li><mono>readr</mono> für Daten I/O.</li>
+  <li><mono>tibble</mono> für moderne <mono>data_frame</mono>'s.</li>
   <li><high><mono>dplyr</mono> für Datenverarbeitung</high>.</li>
   <li><high><mono>tidyr</mono> für Datenverarbeitung</high>.</li>
-  <li><mono>readr</mono> für Daten I/O.</li>
-  <li><mono>purrr</mono> für funktionales Programmieren.</li>
-  <li><mono>tibble</mono> für moderne <mono>data_frame</mono>'s.</li>
+  <li><mono>ggplot2</mono> für Grafiken.</li>
 </ol>
 
-<table style="cellspacing:0; cellpadding:0; border:none;padding-top:20px">
-  <col width="15%">
+<table style="cellspacing:0; cellpadding:0; border:none;padding-top:20px" width=90%>
   <col width="15%">
   <col width="15%">
   <col width="15%">
@@ -187,22 +185,19 @@ ergebnisse
   <col width="15%">
   <tr>
     <td bgcolor="white">
-    <img src="image/hex-ggplot2.png" height=160px style="opacity:.2"></img>
-    </td>
-        <td bgcolor="white">
-    <img src="image/hex-dplyr.png"height=160px></img>
+    <img src="image/hex-readr.png"height=200px style="opacity:.2"></img>
     </td>
     <td bgcolor="white">
-    <img src="image/hex-tidyr.png"height=160px></img>
+    <img src="image/hex-tibble.png"height=200px style="opacity:.2"></img>
     </td>
     <td bgcolor="white">
-    <img src="image/hex-readr.png"height=160px style="opacity:.2"></img>
+    <img src="image/hex-dplyr.png"height=200px></img>
     </td>
     <td bgcolor="white">
-    <img src="image/hex-purrr.png"height=160px style="opacity:.2"></img>
+    <img src="image/hex-tidyr.png"height=200px></img>
     </td>
     <td bgcolor="white">
-    <img src="image/hex-tibble.png"height=160px style="opacity:.2"></img>
+    <img src="image/hex-ggplot2.png" height=200px style="opacity:.2"></img>
     </td>
   </tr>
 </table>
@@ -342,7 +337,7 @@ ergebnisse
 .pull-left45[
 
 ```{r, eval = FALSE, echo = TRUE}
-patienten %>%
+TIBBLE %>%
   rename(NEU = ALT,
          NEU = ALT)
 ```
@@ -370,7 +365,7 @@ patienten %>%
 .pull-left45[
 
 ```{r, eval = FALSE}
-tibble %>%
+TIBBLE %>%
   mutate(
    NAME1 = DEFINITION1,
    NAME2 = DEFINITION2,
@@ -401,7 +396,7 @@ patienten %>%
 .pull-left45[
 
 ```{r, eval = FALSE}
-tibble %>%
+TIBBLE %>%
   mutate(
     NAME = case_when(
       LOGICAL1 ~ WERT1,
@@ -556,11 +551,11 @@ patienten_ergebnisse
 
 ```{r, echo = TRUE, eval = FALSE}
 # Sortiere aufsteigend
-tibble %>%
+TIBBLE %>%
   arrange(VAR1, VAR2)
 
 # Sortiere absteigend (mit desc())
-tibble %>%
+TIBBLE %>%
   arrange(desc(VAR1), VAR2)
 ```
 
@@ -584,11 +579,11 @@ patienten_ergebnisse %>%
 
 ```{r, echo = TRUE, eval = FALSE}
 # Sortiere aufsteigend
-tibble %>%
+TIBBLE %>%
   arrange(VAR1, VAR2)
 
 # Sortiere absteigend (mit desc())
-tibble %>%
+TIBBLE %>%
   arrange(desc(VAR1), VAR2)
 ```
 ]
@@ -614,11 +609,11 @@ patienten_ergebnisse %>%
 
 ```{r, eval = F}
 # Slice mit Sequenz
-patienten_ergebnisse %>%
+TIBBLE %>%
   slice(INDEX_START:INDEX_STOP)
 
 # Slice mit Vektor  
-patienten_ergebnisse %>%
+TIBBLE %>%
   slice(c(INDEX1, INDEX2, ...))
 ```
 
@@ -646,11 +641,11 @@ patienten_ergebnisse %>%
 
 ```{r, eval = F}
 # Slice mit Sequenz
-patienten_ergebnisse %>%
+TIBBLE %>%
   slice(INDEX_START:INDEX_STOP)
 
 # Slice mit Vektor  
-patienten_ergebnisse %>%
+TIBBLE %>%
   slice(c(INDEX1, INDEX2, ...))
 ```
 
@@ -675,7 +670,8 @@ patienten_ergebnisse %>%
 .pull-left4[
 
 ```{r, eval = F}
-patienten_ergebnisse %>%
+# Filter mit logische Vergleichen
+TIBBLE %>%
   filter(VAR1 == WERT1,
          VAR2 > WERT2,
          VAR3 < WERT3,
@@ -702,7 +698,8 @@ patienten_ergebnisse %>%
 .pull-left4[
 
 ```{r, eval = F}
-patienten_ergebnisse %>%
+# Filter mit logische Vergleichen
+TIBBLE %>%
   filter(VAR1 == WERT1,
          VAR2 > WERT2,
          VAR3 < WERT3,
@@ -731,11 +728,11 @@ patienten_ergebnisse %>%
 
 ```{r, eval = FALSE}
 # Wähle Variablen A und B aus
-tibble %>% 
+TIBBLE %>% 
   select(VAR1, VAR2)
 
 # Wähle alles ausser A aus
-tibble %>% 
+TIBBLE %>% 
   select(-VAR1)
 ```
 
@@ -760,11 +757,11 @@ patienten_ergebnisse %>%
 
 ```{r, eval = FALSE}
 # Wähle Variablen A und B aus
-tibble %>% 
+TIBBLE %>% 
   select(VAR1, VAR2)
 
 # Wähle alles ausser A aus
-tibble %>% 
+TIBBLE %>% 
   select(-VAR1)
 ```
 
@@ -786,5 +783,5 @@ patienten_ergebnisse %>%
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/EDA_2020Sep/_sessions/Wrangling/Wrangling_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/EDA_2021Mar/_sessions/Wrangling/Wrangling_practical.html">Practical</a></h1>
 

@@ -232,7 +232,7 @@ summary {
 ## Daten Practical</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Speichere das neue Skript unter dem Namen <code>daten_practical.R</code> im <code>2_Code</code> Ordner.</p></li>
-<li><p>Lade die <code>tidyverse</code>, <code>haven</code>, und <code>readxl</code> Pakete. Falls eines der Pakete noch nicht installiert ist, installiere es zunächst mit <code>install.packages("PAKETNAME"s)</code>.</p></li>
+<li><p>Lade die Pakete <code>tidyverse</code>, <code>haven</code>, und <code>readxl</code>. Falls eines der Pakete noch nicht installiert ist, installiere es zunächst mit <code>install.packages("PAKETNAME"s)</code>.</p></li>
 </ol>
 <pre class="r"><code># Pakete laden
 library(tidyverse)
@@ -241,10 +241,9 @@ library(readxl)</code></pre>
 </div>
 <div id="b---kreiere-vektoren" class="section level3">
 <h3>B - Kreiere Vektoren</h3>
-<p>Die folgende Tabelle zeigt die Daten von fünf hypothetischenn Baselern. Im ersten Teil dieses Practicals ist es deine Aufgabe diese Tabelle schritt für schritt nachzubauen und anschliessend zu analysieren. Wann immmer du <code>XX</code> siehst, bedeutet das, dass du etwas an dessen Stelle eintragen sollst.</p>
-<p><em>5 Baseler</em></p>
+<p>Die folgende Tabelle zeigt die Daten von fünf hypothetischenn Baselern. Im ersten Teil dieses Practicals ist es zunächst deine Aufgabe diese Tabelle Schritt für Schritt <strong>nachzubauen</strong>.</p>
 <table>
-<caption>Data from 5 baselers</caption>
+<caption>Data über 5 Baseler</caption>
 <thead>
 <tr class="header">
 <th align="left">id</th>
@@ -299,7 +298,7 @@ library(readxl)</code></pre>
 </tbody>
 </table>
 <ol style="list-style-type: decimal">
-<li>Erstelle einen numerischen Vektor genannt <code>id</code>, der die <code>id</code> Werte der 5 Baseler Tabelle enthält. Wenn du ihn erstellt hast, printe das Vektor-Objekt.</li>
+<li>Erstelle zuerst einen numerischen Vektor genannt <code>id</code>, der die <code>id</code> Werte der 5 Baseler Tabelle enthält. Wenn du ihn erstellt hast, printe das Vektor-Objekt. Wann immmer du <code>XX</code> siehst, bedeutet das, dass du etwas an dessen Stelle eintragen sollst. Siehe Tabelle.</li>
 </ol>
 <pre class="r"><code># Erstelle Vektor namens id
 XX &lt;- c(XX, XX, XX, XX, XX)
@@ -312,25 +311,25 @@ XX</code></pre>
 <pre class="r"><code># Zeige die Klasse von id
 class(XX)</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>Verwende die <code>length()</code> Funktion, um die länge von <code>id</code> zu bestimmen. Hat er die Länge 5? Wenn nicht, stelle sicher, dass du den Vektor korrekt definiert hast.</li>
+<li>Verwende die <code>length()</code> Funktion, um die Länge von <code>id</code> zu bestimmen. Hat er die Länge 5? Wenn nicht, stelle sicher, dass du den Vektor korrekt definiert hast.</li>
 </ol>
 <pre class="r"><code># Zeige die Länge des Vektors
 length(XX)</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li>Kreiere einen Vektor <code>geschlecht</code>, der die entsprechenden Werte aus der 5 Baseler Tabelle enthält. Stelle sicher, dass du Anführungszeichen <code>""</code> um die einzelnen Elemente setzt, damit R weiss, dass es sich um <code>character</code> Werte handelt. Wenn du fertig bist, lasse dir den Vektor anzeigen.</li>
+<li>Kreiere einen Vektor <code>geschlecht</code>, der die entsprechenden Werte aus der Baseler Tabelle enthält. Stelle sicher, dass du Anführungszeichen <code>""</code> um die einzelnen Elemente setzt, damit R weiss, dass es sich um <code>character</code> Werte handelt. Wenn du fertig bist, lasse dir den Vektor anzeigen.</li>
 </ol>
 <pre class="r"><code># Kreiere Vektor geschlecht 
 XX &lt;- c(&quot;XX&quot;, &quot;XX&quot;, &quot;XX&quot;, &quot;XX&quot;, &quot;XX&quot;)</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li><p>Verwende wiederum die Funktionen <code>class()</code> und <code>length()</code>, um die Klasse (<code>character</code>) und die Länge (5) zu überprüfen?</p></li>
-<li><p>Führe die selben Schritte nun für die Spalten <code>alter</code> und <code>groesse</code> aus.</p></li>
-<li><p>Schaue dir die Spalte <code>gewicht</code> an. Du wirst sehen, dass sie einen fehlenden Wert beinhaltet. Kreiere einen Vektor <code>gewicht</code> mit denselben Schritten wie zuvor. Spezifiziere den fehlenden Wert dabei als <code>NA</code> - ohne Anführungszeichen.</p></li>
+<li><p>Führe die selben Schritte nun für die Spalten <code>alter</code> und <code>groesse</code> durch.</p></li>
+<li><p>Schaue dir die Spalte <code>gewicht</code> an. Du solltest sehen, dass sie einen fehlenden Wert beinhaltet. Kreiere einen Vektor <code>gewicht</code> mit denselben Schritten wie zuvor. Spezifiziere den fehlenden Wert dabei als <code>NA</code> (ohne Anführungszeichen).</p></li>
 </ol>
 </div>
 <div id="c---kreiere-tibbles" class="section level3">
 <h3>C - Kreiere <code>tibbles</code></h3>
 <ol style="list-style-type: decimal">
-<li>Verwende die Funktion <code>tibble()</code>, um einen data frame namens <code>basel</code> zu erstellen, der die eben erstellten Vektoren enthält: <code>id</code>, <code>alter</code>, <code>geschlecht</code>, <code>groesse</code>, und <code>gewicht</code>.</li>
+<li>Verwende die Funktion <code>tibble()</code>, um einen data frame namens <code>basel</code> zu erstellen, der die eben erstellten Vektoren enthält, d.h., <code>id</code>, <code>alter</code>, <code>geschlecht</code>, <code>groesse</code>, und <code>gewicht</code>.</li>
 </ol>
 <pre class="r"><code># Kreiere data frame aus den Vektoren
 XX &lt;- tibble(XX, XX, XX, XX, XX, XX) </code></pre>
@@ -343,7 +342,7 @@ XX &lt;- tibble(XX, XX, XX, XX, XX, XX) </code></pre>
 </div>
 <div id="d---lesen-und-schreiben-von-delimiter-separierten-dateien" class="section level3">
 <h3>D - Lesen und Schreiben von Delimiter-separierten Dateien</h3>
-<p>In diesem Abschnitt wirst du den bekannten <code>diamonds</code> Datensatz einlesen und bearbeiten.</p>
+<p>In diesem Abschnitt importierst du den bekannten <code>diamonds</code> Datensatz und bearbeitest ihn.</p>
 <ol style="list-style-type: decimal">
 <li>Finde den Filepath zum <code>diomands.csv</code> Datensatz. Setze hierzu den Cursor zwischen zwei Anführungszeichen <code>""</code> und drücke ⇥ (tab). Speichere den Filepath zunächst in einem eigenen Objekt namens <code>diamonds_path</code>.</li>
 </ol>
@@ -355,28 +354,28 @@ diamonds_path &lt;- &quot;&quot;</code></pre>
 <pre class="r"><code># Lese den diamonds Datensatz ein
 diamonds &lt;- read_csv(file = XX)</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li><p>Printe den <code>diamonds</code> Datensatz. Inspiziere insbesondere die Variablennamen. Etwas stimmt nicht, oder?</p></li>
-<li><p>Du kannst das Problem lösen, indem du direkt einen <code>character</code> Vektor mit Namen dem <code>col_names</code>-Argument zuweist. Der Vektor soll folgende Namen enthalten: <code>karat</code>, <code>cut</code>, <code>farbe</code>, <code>klarheit</code>, <code>tiefe</code>, <code>tabelle</code>, <code>preis</code>.</p></li>
+<li><p>Printe den <code>diamonds</code> Datensatz. Inspiziere die Variablennamen. Etwas stimmt nicht, oder?</p></li>
+<li><p>Du kannst das Problem lösen, indem du beim Einlesen einen <code>character</code> Vektor mit Namen dem <code>col_names</code>-Argument zuweist. Der Vektor soll folgende Namen enthalten: <code>karat</code>, <code>cut</code>, <code>farbe</code>, <code>klarheit</code>, <code>tiefe</code>, <code>tabelle</code>, <code>preis</code>.</p></li>
 </ol>
 <pre class="r"><code># lese dimaonds nochmal ein, diesmal mit expliziten Spaltennamen
 diamonds &lt;- read_csv(file = XX, 
-                     col_names = c(&#39;XX&#39;,&#39;XX&#39;,&#39;...&#39;))  </code></pre>
+                     col_names = c(&#39;XX&#39;,&#39;XX&#39;, ...))  </code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li><p>Re-inspeziere den Datensatz. Sind die Spaltennamen nun korrekt?</p></li>
-<li><p>Richte nun deine Aufmerksamkeit auf die Klassen der Variablen. Wurden die Klassen aller Variablen richtig interpretiert?</p></li>
-<li><p>Finde heraus was passiert ist. Wähle die <code>karat</code> Variable aus und schaue dir die Werte genau an. Zwischen dem 10. und 20. Eintrag solltest du eine Irregularität erkennen, die dafür verantwortlich ist, dass die Variable als <code>character</code> erkannt wurde.</p></li>
+<li><p>Inspeziere den Datensatz. Sind die Spaltennamen nun korrekt?</p></li>
+<li><p>Richte nun deine Aufmerksamkeit auf die Klassen der Variablen. Wurden die Klassen aller Variablen richtig inferiert?</p></li>
+<li><p>Finde heraus was mit der <code>karat</code> Variable passiert ist. Wähle die <code>karat</code> Variable aus und schaue dir die Werte genau an. <strong>Zwischen dem 10. und 20. Eintrag</strong> solltest du eine Irregularität erkennen, die dafür verantwortlich ist, dass die Variable als <code>character</code> anstatt als <code>numeric</code> erkannt wurde.</p></li>
 <li><p>Ersetze den falsch formatierten Wert in <code>karat</code> indem du unten im Code <code>XX</code> durch die Position (Zahl zwischen 10 und 20) des falschen Wertes ersetzt und <code>YY</code> mit dem korrekten Wert mit <code>.</code> anstatt <code>,</code>.</p></li>
 </ol>
 <pre class="r"><code># Ersetze den falschen Wert
 diamonds$karat[XX] &lt;- YY</code></pre>
 <ol start="9" style="list-style-type: decimal">
-<li>Jetzt hast du den Wert ausgebessert, aber <code>karat</code> ist immer noch vom Typ <code>character</code>. Verwende die Funktion <code>type_convert()</code> um dies zu beheben. Siehe unten.</li>
+<li>Jetzt hast du den Wert ausgebessert, aber <code>karat</code> ist immer noch <code>character</code>. Verwende die Funktion <code>type_convert()</code> um dies zu beheben. Siehe unten.</li>
 </ol>
 <pre class="r"><code># Re-inferiere Datentypen
 diamonds &lt;- type_convert(diamonds)</code></pre>
 <ol start="10" style="list-style-type: decimal">
-<li><p>Printe <code>diamonds</code>, um sicher zu stellen, dass <code>karat</code> jetzt <code>numeric</code> ist, bzw. <code>dbl</code> (ein Typ von <code>numeric</code>).</p></li>
-<li><p>Nachdem du nun die Spaltennamen und die Klassen behoben hast, schreibe den Datensatz wieder auf die Festplatte unter <code>diamonds_sauber.csv</code> mit der Funktion <code>write_csv()</code>.</p></li>
+<li><p>Printe <code>diamonds</code>, um sicher zu stellen, dass <code>karat</code> jetzt <code>numeric</code> ist, bzw. <code>dbl</code> (ein Fall von <code>numeric</code>).</p></li>
+<li><p>Nachdem du nun Spaltennamen und die Klassen korrigiert hast, schreibe den Datensatz wieder auf die Festplatte als <code>diamonds_sauber.csv</code> mit der Funktion <code>write_csv()</code>.</p></li>
 </ol>
 <pre class="r"><code># Schreibe den sauberen diamonds Datensatz 
 write_csv(x = XX, path = &quot;XX/XX.csv&quot;)</code></pre>
@@ -444,20 +443,6 @@ table(titanic$XX, titanic$XX)</code></pre>
 <li><p>Verwende <code>write_csv()</code> um den Datensatz <code>sleep</code> als <code>.csv</code> auf in deinen <code>1_Data</code> Ordner zu schreiben.</p></li>
 </ol>
 </div>
-</div>
-<div id="x---mit-logicals-rechnen" class="section level3">
-<h3>X - Mit <code>logical</code>s rechnen</h3>
-<ol style="list-style-type: decimal">
-<li><p>Verwende <code>sum()</code> und <code>&gt;</code> um auszuzählen wie viele Uni Melbourne Mitarbeiter mehr als 10 Drinks pro Tag zu sich nehmen.</p></li>
-<li><p>Indentifiziere den Index der Person in der Variable <code>alchohol</code> mit <code>which()</code>.</p></li>
-</ol>
-<pre class="r"><code># Index von alchohol &gt; 10
-which(sleep$alchohol &gt; 10)</code></pre>
-<ol start="3" style="list-style-type: decimal">
-<li><p>Nutze den Index der Person, um dir deren Geschlecht (<code>sex</code>) und Beziehungsstatus (<code>marital</code>) anzeigen zu lassen. Nutze hier die Klammern <code>[]</code>.</p></li>
-<li><p>Verwende <code>mean()</code> und <code>&gt;</code> um das mittlere Alter derjenigen Personen zu berechnen, die mehr als einen Drink pro Tag zu sich nehmen.</p></li>
-<li><p>Verwende nun den Code der letzten Aufgabe und <code>!</code> um das mittlere Alter derjenigen Personen zu berechnen, die <i>nicht</i> mehr als einen Drink pro Tag zu sich nehmen. Wo gehört das <code>!</code> hin?</p></li>
-</ol>
 </div>
 </div>
 <div id="beispiele" class="section level2">

@@ -125,7 +125,7 @@ bevoelkerung_long <- bevoelkerung %>%
 
 4. Printe den neu erstellten Datensatz. Alles wie erwartet?
 
-5. Nun bringe nicht nur die Jahre 2001 und 2011, sondern alle im Datensatz vorhandenen Jahre ins Long Format. Schaue dir zunächst nochmals die Namen der Spalten mit `names()` an.
+5. Nun bringe nicht nur die Jahre 2001 und 2011, sondern alle im Datensatz vorhandenen Jahre ins Long-Format. Schaue dir zunächst nochmals die Namen der Spalten mit `names()` an.
 
 ```{r}
 names(bevoelkerung)
@@ -161,7 +161,7 @@ bevoelkerung_long <- bevoelkerung %>%
 
 9. Schaue dir das Resultat an. Alles in Ordnung?
 
-10. Verwende nun das `names_prefix` Argument um die Präfixe der Jahreszahlen automatisch zu entfernen. Der `character`-String der für `names_prefix` bereit gestellt wird, wird vom Beginn der Variablennamen entfernt. 
+10. Verwende nun das `names_prefix` Argument um die Präfixe der Jahreszahlen (`"st_wbev_"`) automatisch zu entfernen. Der `character`-String der für `names_prefix` bereit gestellt wird, wird vom Beginn der Variablennamen entfernt. 
 
 ```{r}
 bevoelkerung_long <- bevoelkerung %>%
@@ -172,7 +172,7 @@ bevoelkerung_long <- bevoelkerung %>%
 
 ### C - Transformation von *Long* zu *Wide* Format 
 
-1. Nun nimm an, dass du die Daten als `bevoelkerung_long` im Long Format bekommen hättest und sie ins Wide Format umwandeln müsstest. Verwende die `pivot_wider()` Funktion und den Argumenten `names_from` und `values_from` die Spalten `jahr` und `einwohner` zu. Speichere das Ergebnis als `bevoelkerung_wide` ab.
+1. Nun nimm an, dass du die Daten als `bevoelkerung_long` im Long Format bekommen hättest und sie ins Wide Format umwandeln müsstest. Verwende die `pivot_wider()` Funktion und weise den Argumenten `names_from` und `values_from` die Spalten `jahr` und `einwohner` zu. Speichere das Ergebnis als `bevoelkerung_wide` ab.
 
 ```{r eval = FALSE, echo = TRUE}
 # Transofmation vom Long ins Wide Format
@@ -197,7 +197,7 @@ bevoelkerung_wide <- bevoelkerung_long %>%
 
 ### D - Wiederholung Wrangling I
 
-Für den Rest des Practicals arbeitst du mit dem `kc_house.csv` Datensatz. Er enthält Verkaufspreise von Häusern in King County, Washington. Aufgelistet sind Häuser, welche zwischen Mai 2014 und Mai 2015 verkauft wurden. Nebst den Verkaufspreisen enthält der Datensatz Spezifikationen der Häuser, z.B. die Anzahl Zimmer eines Hauses. 
+Im Rest des Practicals arbeitst du mit dem `kc_house.csv` Datensatz. Er enthält Verkaufspreise von Häusern in King County, Washington. Aufgelistet sind Häuser, welche zwischen Mai 2014 und Mai 2015 verkauft wurden. Nebst den Verkaufspreisen enthält der Datensatz Spezifikationen der Häuser, z.B. die Anzahl Zimmer eines Hauses. 
 
 1. Lese den Datensatz mit der `read_csv()` Funktion in R ein und speichere ihn unter dem Namen `kc_house`.
 
@@ -235,7 +235,7 @@ kc_house <- kc_house %>%
   mutate(qm_total = qm_wohnraum + qm_dachstock + qm_keller)
 ```
 
-5. Füge eine neue Variable `villa` hinzu (mit `mutate()`), welche den Wert "ja" annimmt, wenn `qm_total` grösser als 750 ist und "nein", wenn `qm_total` kleiner oder gleich 750 ist.
+5. Füge eine neue Variable `villa` hinzu (mit `mutate()`), welche den Wert `"ja"` annimmt, wenn `qm_total` grösser als 750 ist und "nein", wenn `qm_total` kleiner oder gleich 750 ist.
 
 ```{r, eval = TRUE}
 kc_house <- kc_house %>%
@@ -247,13 +247,13 @@ kc_house <- kc_house %>%
 
 ### E - `summarise`
 
-1. Unter Verwendung der base-R `data$col` Notation, berechne den Mittelwert über alle Hauspreise.
+1. Unter Verwendung der base-R `data$col` Notation, berechne den Mittelwert über alle Hauspreise mit `mean()`.
 
 ```{r}
 mean(kc_house$preis)
 ```
 
-2. Berechne wieder den Mittelwert aber verwende diesmal `summarise()` Funktion. Besteht ein Unterschied in den Resultaten dieser und der vorherigen Aufgabe?
+2. Berechne wieder den Mittelwert aber verwende diesmal `mean()` innerhalb der `summarise()` Funktion. Besteht ein Unterschied in den Resultaten dieser und der vorherigen Aufgabe?
 
 ```{r, echo = TRUE, eval = FALSE}
 kc_house %>%
@@ -312,7 +312,7 @@ kc_house %>%
 
 ### F - `group_by` und `summarise` 
 
-1. Verwende `group_by()` und `n()` um zu berechnen wie viele Villen und wie viele normale Häuser (nicht-Villen) im Datensatz vorhanden sind. 
+1. Verwende `group_by()`, `summarise()` und `n()` um zu berechnen wie viele Villen und wie viele normale Häuser (nicht-Villen) im Datensatz vorhanden sind. 
 
 ```{r eval = FALSE, echo = TRUE}
 kc_house %>%
@@ -335,7 +335,7 @@ kc_house %>%
             preis_mean = mean(preis))
 ```
 
-3. Verwende nun `group_by()` und `summarise()`, um auch noch das Maximum zu bestimmen.
+3. Berechne nun auch noch das Minimum (`min()`) und Maximum (`min()`).
 
 ```{r}
 kc_house %>%

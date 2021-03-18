@@ -83,7 +83,7 @@ Am Ende des Practicals wirst du wissen:
 
 3. Speichere das neue Skript unter dem Namen `daten_practical.R` im `2_Code` Ordner.
 
-4. Lade die `tidyverse`, `haven`, und `readxl` Pakete. Falls eines der Pakete noch nicht installiert ist, installiere es zunächst mit `install.packages("PAKETNAME"s)`. 
+4. Lade die Pakete `tidyverse`, `haven`, und `readxl`. Falls eines der Pakete noch nicht installiert ist, installiere es zunächst mit `install.packages("PAKETNAME"s)`. 
 
 ```{r, eval = FALSE, echo = TRUE}
 # Pakete laden
@@ -102,9 +102,7 @@ library(readxl)
 
 ### B - Kreiere Vektoren
 
-Die folgende Tabelle zeigt die Daten von fünf hypothetischenn Baselern. Im ersten Teil dieses Practicals ist es deine Aufgabe diese Tabelle schritt für schritt nachzubauen und anschliessend zu analysieren. Wann immmer du `XX` siehst, bedeutet das, dass du etwas an dessen Stelle eintragen sollst. 
-
-*5 Baseler*
+Die folgende Tabelle zeigt die Daten von fünf hypothetischenn Baselern. Im ersten Teil dieses Practicals ist es zunächst deine Aufgabe diese Tabelle Schritt für Schritt **nachzubauen**.  
 
 ```{r, echo = FALSE, eval = TRUE}
 data <- basel[1:5, c("id", "geschlecht", "alter", "groesse", "gewicht")] %>%
@@ -113,10 +111,10 @@ data <- basel[1:5, c("id", "geschlecht", "alter", "groesse", "gewicht")] %>%
                          geschlecht == "f" ~ 'F'))
 
 data %>% mutate_all(replace_na, " ") %>% 
-  knitr::kable(format = "markdown", caption = "Data from 5 baselers")
+  knitr::kable(format = "markdown", caption = "Data über 5 Baseler")
 ```
 
-1. Erstelle einen numerischen Vektor genannt `id`, der die `id` Werte der 5 Baseler Tabelle enthält. Wenn du ihn erstellt hast, printe das Vektor-Objekt. 
+1. Erstelle zuerst einen numerischen Vektor genannt `id`, der die `id` Werte der 5 Baseler Tabelle enthält. Wenn du ihn erstellt hast, printe das Vektor-Objekt. Wann immmer du `XX` siehst, bedeutet das, dass du etwas an dessen Stelle eintragen sollst. Siehe Tabelle. 
 
 ```{r, eval = FALSE, echo = TRUE}
 # Erstelle Vektor namens id
@@ -146,7 +144,7 @@ class(XX)
 class(id)
 ```
 
-3. Verwende die `length()` Funktion, um die länge von `id` zu bestimmen. Hat er die Länge 5? Wenn nicht, stelle sicher, dass du den Vektor korrekt definiert hast.
+3. Verwende die `length()` Funktion, um die Länge von `id` zu bestimmen. Hat er die Länge 5? Wenn nicht, stelle sicher, dass du den Vektor korrekt definiert hast.
 
 ```{r, eval = FALSE, echo = TRUE}
 # Zeige die Länge des Vektors
@@ -158,7 +156,7 @@ length(XX)
 length(id)
 ```
 
-4. Kreiere einen Vektor `geschlecht`, der die entsprechenden Werte aus der 5 Baseler Tabelle enthält. Stelle sicher, dass du Anführungszeichen `""` um die einzelnen Elemente setzt, damit R weiss, dass es sich um `character` Werte handelt. Wenn du fertig bist, lasse dir den Vektor anzeigen.
+4. Kreiere einen Vektor `geschlecht`, der die entsprechenden Werte aus der Baseler Tabelle enthält. Stelle sicher, dass du Anführungszeichen `""` um die einzelnen Elemente setzt, damit R weiss, dass es sich um `character` Werte handelt. Wenn du fertig bist, lasse dir den Vektor anzeigen.
 
 ```{r, eval = FALSE, echo = TRUE}
 # Kreiere Vektor geschlecht 
@@ -181,7 +179,7 @@ class(geschlecht)
 length(geschlecht)
 ```
 
-6. Führe die selben Schritte nun für die Spalten `alter` und `groesse` aus. 
+6. Führe die selben Schritte nun für die Spalten `alter` und `groesse` durch. 
 
 ```{r}
 # Kreiere Vektor alter
@@ -209,7 +207,7 @@ class(groesse)
 length(groesse)
 ```
 
-7. Schaue dir die Spalte `gewicht` an. Du wirst sehen, dass sie einen fehlenden Wert beinhaltet. Kreiere einen Vektor `gewicht` mit denselben Schritten wie zuvor. Spezifiziere den fehlenden Wert dabei als `NA` - ohne Anführungszeichen.
+7. Schaue dir die Spalte `gewicht` an. Du solltest sehen, dass sie einen fehlenden Wert beinhaltet. Kreiere einen Vektor `gewicht` mit denselben Schritten wie zuvor. Spezifiziere den fehlenden Wert dabei als `NA` (ohne Anführungszeichen).
 
 ```{r}
 # Kreiere Vektor gewicht
@@ -227,7 +225,7 @@ length(gewicht)
 
 ### C - Kreiere `tibbles`
 
-1. Verwende die Funktion `tibble()`, um einen data frame namens `basel` zu erstellen, der die eben erstellten Vektoren enthält: `id`, `alter`, `geschlecht`, `groesse`, und `gewicht`. 
+1. Verwende die Funktion `tibble()`, um einen data frame namens `basel` zu erstellen, der die eben erstellten Vektoren enthält, d.h., `id`, `alter`, `geschlecht`, `groesse`, und `gewicht`. 
 
 ```{r, eval = FALSE, echo = TRUE}
 # Kreiere data frame aus den Vektoren
@@ -278,7 +276,7 @@ min(basel$alter)
 
 ### D - Lesen und Schreiben von Delimiter-separierten Dateien
 
-In diesem Abschnitt wirst du den bekannten `diamonds` Datensatz einlesen und bearbeiten. 
+In diesem Abschnitt importierst du den bekannten `diamonds` Datensatz und bearbeitest ihn. 
 
 1. Finde den Filepath zum `diomands.csv` Datensatz. Setze hierzu den Cursor zwischen zwei Anführungszeichen `""` und drücke &#8677; (tab). Speichere den Filepath zunächst in einem eigenen Objekt namens `diamonds_path`. 
 
@@ -304,19 +302,19 @@ diamonds <- read_csv(file = XX)
 diamonds <- read_csv(file = diamonds_path)
 ```
 
-3. Printe den `diamonds` Datensatz. Inspiziere insbesondere die Variablennamen. Etwas stimmt nicht, oder?
+3. Printe den `diamonds` Datensatz. Inspiziere die Variablennamen. Etwas stimmt nicht, oder?
 
 ```{r}
 # Print diamonds
 diamonds
 ```
 
-4. Du kannst das Problem lösen, indem du direkt einen `character` Vektor mit Namen dem `col_names`-Argument zuweist. Der Vektor soll folgende Namen enthalten: `karat`, `cut`, `farbe`, `klarheit`, `tiefe`, `tabelle`, `preis`.
+4. Du kannst das Problem lösen, indem du beim Einlesen einen `character` Vektor mit Namen dem `col_names`-Argument zuweist. Der Vektor soll folgende Namen enthalten: `karat`, `cut`, `farbe`, `klarheit`, `tiefe`, `tabelle`, `preis`.
 
 ```{r, eval = F, echo = T}
 # lese dimaonds nochmal ein, diesmal mit expliziten Spaltennamen
 diamonds <- read_csv(file = XX, 
-                     col_names = c('XX','XX','...'))  
+                     col_names = c('XX','XX', ...))  
 ```
 
 ```{r}
@@ -325,16 +323,16 @@ diamonds <- read_csv(file = diamonds_path,
                      col_names = c("karat", "cut", "farbe", "klarheit", "tiefe", "tabelle", "preis"))
 ```
 
-5. Re-inspeziere den Datensatz. Sind die Spaltennamen nun korrekt?
+5. Inspeziere den Datensatz. Sind die Spaltennamen nun korrekt?
 
 ```{r}
 # print diamonds
 diamonds
 ```
 
-6. Richte nun deine Aufmerksamkeit auf die Klassen der Variablen. Wurden die Klassen aller Variablen richtig interpretiert?
+6. Richte nun deine Aufmerksamkeit auf die Klassen der Variablen. Wurden die Klassen aller Variablen richtig inferiert?
 
-7. Finde heraus was passiert ist. Wähle die `karat` Variable aus und schaue dir die Werte genau an. Zwischen dem 10. und 20. Eintrag solltest du eine Irregularität erkennen, die dafür verantwortlich ist, dass die Variable als `character` erkannt wurde.   
+7. Finde heraus was mit der `karat` Variable passiert ist. Wähle die `karat` Variable aus und schaue dir die Werte genau an. **Zwischen dem 10. und 20. Eintrag** solltest du eine Irregularität erkennen, die dafür verantwortlich ist, dass die Variable als `character` anstatt als `numeric` erkannt wurde.   
 
 ```{r}
 # Zeige die Variable Karat
@@ -353,21 +351,21 @@ diamonds$karat[XX] <- YY
 diamonds$karat[17] <- 0.37
 ```
 
-9. Jetzt hast du den Wert ausgebessert, aber `karat` ist immer noch vom Typ `character`. Verwende die Funktion `type_convert()` um dies zu beheben. Siehe unten.
+9. Jetzt hast du den Wert ausgebessert, aber `karat` ist immer noch `character`. Verwende die Funktion `type_convert()` um dies zu beheben. Siehe unten.
 
 ```{r, echo = T}
 # Re-inferiere Datentypen
 diamonds <- type_convert(diamonds)
 ```
 
-10. Printe `diamonds`, um sicher zu stellen, dass `karat` jetzt `numeric` ist, bzw. `dbl` (ein Typ von `numeric`).
+10. Printe `diamonds`, um sicher zu stellen, dass `karat` jetzt `numeric` ist, bzw. `dbl` (ein Fall von `numeric`).
 
 ```{r}
 # Zeige diamonds
 diamonds
 ```
 
-11. Nachdem du nun die Spaltennamen und die Klassen behoben hast, schreibe den Datensatz wieder auf die Festplatte unter `diamonds_sauber.csv` mit der Funktion `write_csv()`. 
+11. Nachdem du nun Spaltennamen und die Klassen korrigiert hast, schreibe den Datensatz wieder auf die Festplatte als `diamonds_sauber.csv` mit der Funktion `write_csv()`. 
 
 ```{r, eval = F, echo = T}
 # Schreibe den sauberen diamonds Datensatz 
@@ -449,6 +447,7 @@ mean(diamonds$teuer)
 # Anteil Diamanten mit karat > 1
 mean(diamonds$karat > 1)
 ```
+
 
 ### F - Einlesen Anderer Formate
 
@@ -552,44 +551,6 @@ mean(x = sleep$alchohol, na.rm = TRUE)
 # Schreibe Daten als .csv
 write_csv(x = sleep, 
           path = "1_Data/sleep.csv")
-```
-
-### X - Mit `logical`s rechnen
-
-1. Verwende `sum()` und `>` um auszuzählen wie viele Uni Melbourne Mitarbeiter mehr als 10 Drinks pro Tag zu sich nehmen. 
-
-```{r}
-# Mehr als 10 Drinks
-sum(sleep$alchohol > 10, na.rm = TRUE)
-```
-
-2. Indentifiziere den Index der Person in der Variable `alchohol` mit `which()`. 
-
-```{r, eval = FALSE, echo = TRUE}
-# Index von alchohol > 10
-which(sleep$alchohol > 10)
-```
-
-3. Nutze den Index der Person, um dir deren Geschlecht (`sex`) und Beziehungsstatus (`marital`) anzeigen zu lassen. Nutze hier die Klammern `[]`.
-
-```{r}
-# Geschlecht und Alter der Person
-sleep$marital[which(sleep$alchohol > 10)]
-sleep$sex[which(sleep$alchohol > 10)]
-```
-
-4. Verwende `mean()` und `>` um das mittlere Alter derjenigen Personen zu berechnen, die mehr als einen Drink pro Tag zu sich nehmen.    
-
-```{r}
-# Mittleres Alter für > 1 Drink
-mean(sleep$age[which(sleep$alchohol > 1)], na.rm = TRUE)
-```
-
-5. Verwende nun den Code der letzten Aufgabe und `!` um das mittlere Alter derjenigen Personen zu berechnen, die <i>nicht</i> mehr als einen Drink pro Tag zu sich nehmen. Wo gehört das `!` hin?    
-
-```{r}
-# Mittleres Alter für not > 1 Drink
-mean(sleep$age[which(!sleep$alchohol > 1)], na.rm = TRUE)
 ```
 
 ## Beispiele

@@ -91,7 +91,7 @@ library(tidyverse)
 
 ### B - Lade den Datensatz
 
-1. Verwende die `read_csv()` Funktion um den Datensatz `appointments` als Objekt `appointments` einzulesen. Denke an den Trick mit den Anführungszeichen. 
+1. Verwende die `read_csv()` Funktion um den Datensatz `appointments` als Objekt `appointments` einzulesen. Denke an den Trick mit den Anführungszeichen (Cursor zwischen die Anführungszeichen und dann Tab). 
 
 ```{r, echo = F}
 # Lese appointments

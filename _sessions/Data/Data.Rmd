@@ -471,6 +471,48 @@ Mehr Info [hier](http://rspatial.org/intr/rst/4-indexing.html).
 
 ---
 
+# Das <mono>tidyverse</mono>
+
+<ul>
+  <li class="m1"><span>Das <a href="https://www.tidyverse.org/"><mono>tidyverse</mono></a> ist eine Sammlung hoch-performanter, nutzerfreundlicher Pakete für eine effiziente Datenaufbereitung und -analyse.</span></li>
+</ul>
+
+<ol style="padding-left:72px">
+  <li><high><mono>readr</mono> für Daten I/O</high>.</li>
+  <li><high><mono>tibble</mono> für moderne <mono>data_frame</mono>'s</high>.</li>
+  <li><mono>dplyr</mono> für Datenverarbeitung.</li>
+  <li><mono>tidyr</mono> für Datenverarbeitung.</li>
+  <li><mono>ggplot2</mono> für Grafiken.</li>
+</ol>
+
+<table style="cellspacing:0; cellpadding:0; border:none;padding-top:20px" width=90%>
+  <col width="15%">
+  <col width="15%">
+  <col width="15%">
+  <col width="15%">
+  <col width="15%">
+  <tr>
+    <td bgcolor="white">
+    <img src="image/hex-readr.png"height=200px></img>
+    </td>
+    <td bgcolor="white">
+    <img src="image/hex-tibble.png" height=200px></img>
+    </td>
+    <td bgcolor="white">
+    <img src="image/hex-dplyr.png"height=200px style="opacity:.2"></img>
+    </td>
+    <td bgcolor="white">
+    <img src="image/hex-tidyr.png"height=200px style="opacity:.2"></img>
+    </td>
+    <td bgcolor="white">
+    <img src="image/hex-ggplot2.png" height=200px style="opacity:.2"></img>
+    </td>
+  </tr>
+</table>
+
+
+---
+
 # Datentypen ausserhalb von R
 
 <table class="tg"  style="cellspacing:0; cellpadding:0; border:none;" width="95%">
@@ -517,7 +559,7 @@ Mehr Info [hier](http://rspatial.org/intr/rst/4-indexing.html).
 
 ---
 
-# Delimiter getrennte Daten 
+# <mono>readr</mono> 
 
 .pull-left45[
 
@@ -544,7 +586,7 @@ Mehr Info [hier](http://rspatial.org/intr/rst/4-indexing.html).
 
 ---
 
-# Delimiter getrennte Daten 
+# <mono>readr</mono> 
 
 .pull-left45[
 
@@ -585,6 +627,52 @@ basel
 
 ---
 
+# <mono>tibble</mono> 
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Schlanke Version des <high>data frames</high> mit:</span></li>
+  <ul class="level">
+    <li><span>Informativeren <high>Print</high></span></li>
+    <li><span>Keinen <high>Faktoren</high></span></li>
+    <li><span>Konsistenteres <high>Subsetting</high></span></li>
+  </ul>
+</ul>
+
+<br>
+<p align="center">
+  <img src="image/hex-tibble.png" height=200>
+</p>
+
+]
+
+.pull-right45[
+
+```{r, echo = F, message=F}
+require(tibble)
+options(tibble.width = 35, tibble.max_extra_cols = 0, tibble.print_max = 3,
+        tibble.print_min = 5)
+```
+
+
+```{r, message = F}
+# Lese Basel Datensatz ein
+basel <- read_csv("1_Data/basel.csv")
+
+# Benutze expliziten Delimiter
+basel <- read_delim("1_Data/basel.csv",
+                   delim = ",")
+basel
+
+```
+
+]
+
+
+
+---
+
 # Den Filepath finden
 
 .pull-left45[
@@ -597,7 +685,7 @@ basel
 <br>
 
 <p align="center">
-  <img src="image/tab.png" height="150px"></img>
+  <img src="image/tab.png" height="150px" style="border-radius:10px"></img>
 </p>
 
 ] 
@@ -621,8 +709,10 @@ basel
   <li class="m2"><span>Setze den Cursor zwischen Anführungszeichen und drücke <highm>Tab</highm>.</span></li>
 </ul>
 
+<br>
+
 <p align="center">
-  <img src="image/tab.png" height="150px"></img>
+  <img src="image/tab.png" height="150px" style="border-radius:10px"></img>
 </p>
 
 ] 
@@ -854,6 +944,6 @@ class: middle, center
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/EDA_2020Sep/_sessions/Data/Data_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/EDA_2021Mar/_sessions/Data/Data_practical.html">Practical</a></h1>
 
 

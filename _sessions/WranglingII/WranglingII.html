@@ -465,7 +465,7 @@ patienten_ergebnisse %&gt;%
 
 ```r
 # wide zu long
-DATEN %&gt;% 
+TIBBLE %&gt;% 
   pivot_longer(cols = VARS,
                names_to = NAME1,
                values_to = NAME2)
@@ -500,7 +500,7 @@ patienten_ergebnisse %&gt;%
 
 ```r
 # wide zu long
-DATEN %&gt;% 
+TIBBLE %&gt;% 
   pivot_longer(cols = VARS,
                names_to = NAME1,
                values_to = NAME2)
@@ -542,7 +542,7 @@ patienten_ergebnisse %&gt;%
 
 ```r
 # wide zu long
-DATEN %&gt;% 
+TIBBLE %&gt;% 
   pivot_wider(names_from = VAR1,
               values_from = VAR2)
 ```
@@ -580,7 +580,7 @@ patienten_ergebnisse_lang
 
 ```r
 # wide zu long
-DATEN %&gt;% 
+TIBBLE %&gt;% 
   pivot_wider(names_from = VAR1,
               values_from = VAR2)
 ```
@@ -672,7 +672,7 @@ basel
 
 
 ```r
-DATEN %&gt;%
+TIBBLE %&gt;%
   summarise(
     NAME1 = SUMMARY_FUN(VAR1),
     NAME2 = SUMMARY_FUN(VAR2)
@@ -715,7 +715,7 @@ basel %&gt;%
 
 
 ```r
-DATEN %&gt;%
+TIBBLE %&gt;%
   summarise_if(
     BEDINGUNG,
     SUMMARY_FUN
@@ -758,7 +758,7 @@ basel %&gt;%
 
 
 ```r
-DATEN %&gt;%
+TIBBLE %&gt;%
   summarise_if(
     BEDINGUNG,
     SUMMARY_FUN
@@ -798,7 +798,7 @@ basel %&gt;%
 
 
 ```r
-DATEN %&gt;%
+TIBBLE %&gt;%
   summarise_if(
     BEDINGUNG,
     SUMMARY_FUN,
@@ -847,7 +847,7 @@ basel %&gt;%
 
 
 ```r
-DATEN %&gt;%
+TIBBLE %&gt;%
   group_by(GRUPPEN_VAR) %&gt;%
   summarise(
     NAME1 = SUMMARY_FUN(VAR1),
@@ -896,7 +896,7 @@ basel %&gt;%
 
 
 ```r
-DATEN %&gt;%
+TIBBLE %&gt;%
   group_by(GRUPPEN_VAR) %&gt;%
   summarise(
     NAME1 = SUMMARY_FUN(VAR1),
@@ -947,7 +947,7 @@ basel %&gt;%
 
 
 ```r
-DATEN %&gt;%
+TIBBLE %&gt;%
   group_by(GRUPPEN_VAR) %&gt;%
   summarise(
     NAME1 = SUMMARY_FUN(VAR1),
@@ -996,7 +996,7 @@ basel %&gt;%
 
 
 ```r
-DATEN %&gt;%
+TIBBLE %&gt;%
   group_by(GRUPPEN_VAR) %&gt;%
   summarise(
     NAME1 = SUMMARY_FUN(VAR1),
@@ -1046,7 +1046,7 @@ basel %&gt;%
 
 
 ```r
-DATEN %&gt;%
+TIBBLE %&gt;%
   group_by(GRUPPEN_VAR) %&gt;%
   summarise(
     NAME1 = SUMMARY_FUN(VAR1),
@@ -1097,7 +1097,7 @@ basel %&gt;%
 
 
 ```r
-DATEN %&gt;%
+TIBBLE %&gt;%
   group_by(GRUPPEN_VAR) %&gt;%
   summarise(
     NAME = SUMMARY_FUN(VAR),
