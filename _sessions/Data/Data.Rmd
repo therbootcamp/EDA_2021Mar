@@ -100,7 +100,7 @@ basel$groesse[1:3] = c(174,180,168)
 - <span>Kann alle Daten beinhalten, inkl. `list`s</span>
 - <span>Nützlich für komplexe Funktionsoutputs</span>
 
-<high>`data_frame`</high>, <high>`tibble`</high> - R's Tabelle
+<high>`data.frame`</high> - R's Tabelle
 - <span>Spezialfall einer `list`</span>
 - <span>R's `Tidy`-Format für Daten
 
@@ -120,7 +120,7 @@ basel$groesse[1:3] = c(174,180,168)
 
 .pull-left45[
 
-# `data_frame`, `tibble`
+# data frame
 
 <ul>
   <li class="m1"><span>Eine <mono>list</mono>e bestehend aus <high><mono>vector</mono>en gleicher Länge</high>.</span></li>
