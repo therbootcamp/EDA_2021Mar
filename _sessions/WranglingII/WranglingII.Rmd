@@ -938,4 +938,4 @@ basel %>%
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/EDA_2020Sep/_sessions/WranglingII/WranglingII_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/EDA_2021Mar/_sessions/WranglingII/WranglingII_practical.html">Practical</a></h1>

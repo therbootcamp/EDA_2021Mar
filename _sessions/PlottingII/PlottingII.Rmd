@@ -1257,4 +1257,4 @@ ggsave(filename = "mein_plot.png",
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/EDA_2020Sep/_sessions/PlottingII/PlottingII_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/EDA_2021Mar/_sessions/PlottingII/PlottingII_practical.html">Practical</a></h1>
