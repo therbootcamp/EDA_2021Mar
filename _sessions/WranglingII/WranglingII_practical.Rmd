@@ -247,7 +247,7 @@ kc_house <- kc_house %>%
 
 ### E - `summarise`
 
-1. Unter Verwendung der base-R `data$col` Notation, berechne den Mittelwert über alle Hauspreise mit `mean()`.
+1. Unter Verwendung der base-R `TIBBLE$VARIABLE`-Notation, berechne den Mittelwert über alle Hauspreise mit `mean()`.
 
 ```{r}
 mean(kc_house$preis)
